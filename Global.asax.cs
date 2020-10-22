@@ -4,6 +4,9 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
+using System.Security;
+using System.Web.Optimization;
+using WebGrease.Configuration;
 
 namespace OnlineMobileShopping
 {
@@ -12,6 +15,8 @@ namespace OnlineMobileShopping
         protected void Application_Start()
         {
             AreaRegistration.RegisterAllAreas();
+            BundleConfig.RegisterBundles(BundleTable.Bundles);
+            //GlobalConfiguration.Configure();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
         }
     }
